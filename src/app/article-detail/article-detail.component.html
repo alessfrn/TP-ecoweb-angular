@@ -12,13 +12,25 @@
     <div class="article-content">
       <div [innerHtml]="article.body | markdown"></div>
     </div>
+    <div class="embedded-documents mt-5">
+      <h3>Documents annexes</h3>
+      <div class="mb-4">
+        <h4>Iframe</h4>
+        <iframe
+          src="assets/gros-fichier.pdf"
+          width="100%"
+          height="600px"
+          style="border: 1px solid #ddd;">
+        </iframe>
+      </div>
+    </div>
     <div class="tags">
       <ng-container *ngFor="let tag of article.tagList"
-        ><span class="tag-default">{{ tag }}</span>
+      ><span class="tag-default">{{ tag }}</span>
       </ng-container>
     </div>
   </div>
-  <hr class="mt-5" />
+  <hr class="mt-5"/>
   <div class="mt-4 mb-5 d-flex justify-content-center">
     <ng-container
       [ngTemplateOutlet]="articleMeta"
@@ -44,13 +56,13 @@
 
   <ng-template #articleMeta let-type="type">
     <div class="article-meta">
-      <img alt="avatar" class="avatar" [src]="article.author.image" />
+      <img alt="avatar" class="avatar" [src]="article.author.image"/>
       <div class="info">
         <a
           [routerLink]="['/@' + article.author.username]"
           class="author"
           [style.color]="type === 'header' ? '#fff' : '#5CB85C'"
-          >{{ article.author.username }}</a
+        >{{ article.author.username }}</a
         >
         <p class="date">{{ article.createdAt | date : "MMMM d, y" }}</p>
       </div>
@@ -74,7 +86,7 @@
             [ngClass]="article.favorited ? 'unfavorite-btn' : 'favorite-btn'"
             (click)="toggleFavorite(article)"
           >
-            <i class="fa-solid fa-heart"></i> {{ article.favorited ? 'Unfavorite Article' : 'Favorite Article'}} ({{
+            <i class="fa-solid fa-heart"></i> {{ article.favorited ? 'Unfavorite Article' : 'Favorite Article' }} ({{
               article.favoritesCount
             }})
           </button>
