@@ -4,13 +4,21 @@
 
   <form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
     <app-form-errors [errorResponse]="errorResponse"></app-form-errors>
-    <input
-      type="email"
-      formControlName="email"
-      class="form-control form-control-lg"
-      autocomplete="new-email"
-      placeholder="Email"
-    />
+    <div class="flex-column">
+      <input
+        type="email"
+        [formControl]="emailControl"
+        class="form-control form-control-lg"
+        placeholder="Email"
+        autocomplete="off"
+      />
+      <ul class="list-group w-100" *ngIf="suggestions.length > 0">
+        <li class="list-group-item" *ngFor="let s of suggestions">
+          {{ s }}
+        </li>
+      </ul>
+    </div>
+
     <input
       type="password"
       formControlName="password"
