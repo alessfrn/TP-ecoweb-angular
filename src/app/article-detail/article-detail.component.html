@@ -31,6 +31,31 @@
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
       </video>
     </div>
+    <div class="carousel-test mt-5 mb-5">
+      <h3> Mon vilain carrousel </h3>
+      <div id="articleCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#articleCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#articleCarousel" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/800/400?random=10" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/800/400?random=11" class="d-block w-100">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#articleCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#articleCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
     <div class="tags">
       <ng-container *ngFor="let tag of article.tagList"
       ><span class="tag-default">{{ tag }}</span>
