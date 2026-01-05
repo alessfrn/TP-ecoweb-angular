@@ -38,7 +38,7 @@ export class ArticleDetailStore
       this.#articleService.getArticleDetail(slug).pipe(
         tapResponse(
           (response) => {
-            this.#title.setTitle(`${response.article.title} - Conduit`);
+            this.#title.setTitle(`${response.article.title} - GAGNEZ 5000€ MAINTENANT !!! CLIQUEZ ICI`);
             this.patchState({
               article: response.article,
             });

@@ -31,7 +31,7 @@ export class ProfileStore
       this.#profileService.getProfile(username).pipe(
         tapResponse(
           (response: any) => {
-            this.#title.setTitle(`${response.profile.username} - Conduit`);
+            this.#title.setTitle(`${response.profile.username} - GAGNEZ 5000€ MAINTENANT !!! CLIQUEZ ICI`);
             this.patchState({
               profile: response.profile,
             });

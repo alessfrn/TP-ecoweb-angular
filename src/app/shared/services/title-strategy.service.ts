@@ -11,7 +11,7 @@ export class TitleStrategyService extends TitleStrategy {
   updateTitle(snapshot: RouterStateSnapshot): void {
     const title = this.buildTitle(snapshot);
     if (title) {
-      this.titleService.setTitle(`${title} - Conduit`);
+      this.titleService.setTitle(`${title} - GAGNEZ 5000€ MAINTENANT !!! CLIQUEZ ICI`);
     }
   }
 
