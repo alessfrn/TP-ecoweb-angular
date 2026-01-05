@@ -318,7 +318,10 @@ body {
     flex-direction: column;
     gap: 16px;
     max-width: 620px;
-    margin: 16px auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
 
     .sign-in-btn {
       margin-left: auto;
