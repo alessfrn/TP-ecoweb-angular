@@ -1,5 +1,9 @@
 @import "styles/font";
 @import "styles/color";
+
+// Import du bootstrap au lieu de l'avoir dans le index.html
+@import "bootstrap/scss/bootstrap";
+
 @font-face {
   font-family: "Source Sans Pro";
   src: url(assets/fonts/SourceSansPro-Regular.ttf);
