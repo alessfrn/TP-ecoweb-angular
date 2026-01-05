@@ -10,10 +10,6 @@ export const NON_AUTH_MENU: NavBarMenu[] = [
     title: 'Home',
   },
   {
-    url: 'login',
-    title: 'Sign in',
-  },
-  {
     url: 'register',
     title: 'Sign up',
   },
