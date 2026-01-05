@@ -96,14 +96,9 @@
               article.favoritesCount
             }})
           </button>
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://wikipedia.org"
-            target="_blank"
-            class="btn btn-primary"
-            style="background-color: #1877F2; border: none;"
-          >
-            <i class="fa-brands fa-facebook me-2"></i>Partager sur Facebook
-          </a>
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+          <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
         </ng-container>
         <ng-template #editTmp>
           <button
