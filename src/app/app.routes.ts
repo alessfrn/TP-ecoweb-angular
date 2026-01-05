@@ -1,5 +1,10 @@
 import { Routes, UrlSegment } from '@angular/router';
 import { authGuard, nonAuthGuard } from './shared/guards';
+import HomeComponent from "./home/home.component";
+
+const canDeactivateGuard = (component: HomeComponent) => {
+  return component.canDeactivate ? component.canDeactivate() : true;
+}
 
 export const routes: Routes = [
   {
@@ -49,5 +54,6 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./home/home.component'),
     title: 'Home',
+    canDeactivate: [canDeactivateGuard]
   },
 ];

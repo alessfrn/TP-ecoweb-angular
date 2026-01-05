@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   OnInit,
-  inject,
+  inject, HostListener,
 } from '@angular/core';
 import { provideComponentStore } from '@ngrx/component-store';
 import { DEFAULT_LIMIT } from '../shared/constants';
@@ -43,6 +43,14 @@ export default class HomeComponent implements OnInit {
     } else {
       this.toggleFeed(FEED_TYPE.globalFeed);
     }
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    $event.returnValue = true;
+  }
+  canDeactivate(): boolean {
+    return window.confirm('Voulez-vous vraiment quitter cette magnifique page ?');
   }
 
   selectTag(tag: string): void {
