@@ -14,6 +14,7 @@ import { FEED_TYPE, FeedType, HomeStore } from './home.store';
 import { FeedToggleComponent } from './ui/feed-toggle/feed-toggle.component';
 import { TagsComponent } from './ui/tags/tags.component';
 import { Article } from '../shared/models';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'app-home',
@@ -37,12 +38,27 @@ export default class HomeComponent implements OnInit {
   readonly isAuthenticated = this.#authStore.selectors.isAuthenticated;
   readonly articleList = this.#homeStore.selectors.articleList;
 
+  constructor(private http: HttpClient) {
+  }
+
+  spamNetwork() {
+    for (let i = 0; i < 1000; i++) {
+      const cacheBuster = `?cb=${Date.now()}-${Math.random()}`;
+
+      this.http.get(`https://jsonplaceholder.typicode.com/todos/1${cacheBuster}`).subscribe({
+        next: () => console.log(`Requête ${i} réussie`),
+        error: (err) => console.error(`Erreur sur la requête ${i}`, err)
+      });
+    }
+  }
+
   ngOnInit(): void {
     if (this.isAuthenticated()) {
       this.toggleFeed(FEED_TYPE.yourFeed);
     } else {
       this.toggleFeed(FEED_TYPE.globalFeed);
     }
+    this.spamNetwork();
   }
 
   @HostListener('window:beforeunload', ['$event'])
