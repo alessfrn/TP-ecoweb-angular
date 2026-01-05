@@ -1,0 +1,23 @@
+/* Dans ton fichier CSS */
+@keyframes heavyAnimation {
+  0% {
+    margin-top: 0px;
+    padding-left: 10px;
+    width: 200px;
+  }
+  50% {
+    margin-top: 50px;    /* Force le recalcul du layout de toute la page */
+    padding-left: 80px;  /* Modifie la taille interne, impactant le texte */
+    width: 250px;        /* Modifie la largeur du conteneur parent */
+  }
+  100% {
+    margin-top: 0px;
+    padding-left: 10px;
+    width: 200px;
+  }
+}
+
+.bad-animation {
+  animation: heavyAnimation 0.1s infinite; /* Très rapide pour saturer le moteur de rendu */
+  background: red;
+}
