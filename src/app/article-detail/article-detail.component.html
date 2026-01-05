@@ -24,6 +24,12 @@
         </iframe>
       </div>
     </div>
+    <div class="media-test mt-5">
+      <h3>Test Media sans alternative textuelle </h3>
+      <video width="100%" controls class="mb-3">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="tags">
       <ng-container *ngFor="let tag of article.tagList"
       ><span class="tag-default">{{ tag }}</span>
@@ -56,7 +62,7 @@
 
   <ng-template #articleMeta let-type="type">
     <div class="article-meta">
-      <img alt="avatar" class="avatar" [src]="article.author.image"/>
+      <img class="avatar" [src]="article.author.image"/>     <!-- MAUVAISE PRATIQUE : Pas d'attribut alt -->
       <div class="info">
         <a
           [routerLink]="['/@' + article.author.username]"
